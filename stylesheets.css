@@ -54,13 +54,13 @@ font-family: 'Source Sans Pro', sans-serif;
   font-size: 80%;
 }
 
-
 .language {
   padding-right: 5%;
   size: 90%;
   font-family: 'Playfair Display', serif;
   color: white;  
 }
+
 .language .p{
   margin: 0%;
 }
@@ -84,7 +84,11 @@ transform: translate(-50%,-50%);
 }
 
 .content-2{
-  padding-bottom: 8%;
+  padding-bottom: 5%;
+}
+
+.left-desc{
+  padding-bottom: 10%;
 }
 
 .left-pict{
@@ -92,9 +96,6 @@ transform: translate(-50%,-50%);
   width: auto;
 }
 
-.left-desc{
-  padding-bottom: 5%;
-}
 .left-title{
   font-size: 120%;
   font-weight:bold ;
@@ -110,6 +111,7 @@ transform: translate(-50%,-50%);
 .right-desc{
   font-size: 128%;
   font-weight: 600;
+  padding-bottom: 10%;
 }
 
 .col-4{
@@ -120,13 +122,20 @@ transform: translate(-50%,-50%);
   padding-top: 5%;
   text-align: justify;
   text-justify: inter-word;
-
 }
-
+.mb-story{
+  text-align: justify;
+}
 h1.story{
   font-family: 'Playfair Display', serif;
   font-size: 300%;
 }
+
+.story-desc{
+  overflow: hidden
+}
+
+
 
 
 /* .grey-bg{
@@ -136,16 +145,19 @@ h1.story{
 } */
 
 
+.mb-location{
+  text-align: justify;
+}
 h1.location{
   font-family: 'Playfair Display', serif;
   font-size: 300%;
   padding-top: 1%;
-
 }
 
 .location-desc{
   max-width: 90%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .section-grey-bg{
@@ -157,26 +169,23 @@ h1.location{
 }
 
 .maps-pict{
-  margin-top: -150px;
+  margin-top: -160px;
 }
 
 h1.plan{
   font-family: 'Playfair Display', serif;
   font-size: 300%;
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 .plan-desc{
 padding-left: 10%;
 text-align: justify;
 text-justify: inter-word;
+overflow: hidden
+
 }
 
-
-
-.plan-desc{
-  padding-bottom: 5%;
-}
 
 .type-title{
   color: #7C6448;
@@ -186,15 +195,31 @@ text-justify: inter-word;
 
 h1.highlights{
   text-align: center;
-  size: 300%;
+  font-size: 300%;
   font-family: 'Playfair Display', serif;
+  padding-top: 1%;
+  padding-bottom: 4%;
+}
 
+.highlight-content{
+  text-align: justify;
+  overflow: hidden;
+
+  }
+
+
+@media(min-width: 768px){
+  .highlight-content{
+  column-count: 2;
+  column-gap: 40px;
+
+  }
 }
 
 .col-6{
   padding-top: 6%;
-  padding-left: 5%;
-  padding-right: 5%;
+  /* padding-left: 5%;
+  padding-right: 5%; */
   text-align: justify;
   text-justify: inter-word;
 }
@@ -206,10 +231,64 @@ h1.highlights{
   padding-bottom: 10%;
 }
 
+.footer:before{
+  content: "";
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
 .kuafu-logo{
   padding-top: 6%;
 }
 
+a.footer-title{
+  position: relative;
+  text-decoration: none;
+  font-size:5vh;
+  color: white;
+  text-align: center;
+  display: block;
+}
+
+a.footer-title:hover{
+  color: white;
+}
+a.footer-title::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color:white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+a:hover::before{
+  visibility: visible;
+  transform: scaleX(1);
+}
+/* .footer-title:after{
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s; width:0;
+
+} */
+a:hover:after{
+  width: 100%;
+  left: 0;
+}
 .footer-container{  
   padding-top: 15%;
   color: white;
@@ -220,14 +299,16 @@ h1.highlights{
   padding-top: 10%;
   color: white;
   font-family: 'Playfair Display', serif;
-  font-size: 80%;
-
+  font-size: 2.5vh;
 }
 
 .footer-maps{
   color: white;
   text-decoration: underline;
+  padding-top: 10%;
 }
+
+
 
 /* .footer-desc{
   padding-top: 50%;
@@ -235,3 +316,166 @@ h1.highlights{
   text-align: justify;
   text-justify: inter-word;
 } */
+
+/* @media screen and (max-height: 300px) {
+	.footer-title {
+		margin-top: 40px;
+	}
+} */
+
+@media(max-width: 767px){
+  .dropdown .fa.fa-angle-down{
+    font-size: 300%;
+  }
+
+  .left-desc{
+    padding-bottom: 2%;
+  }
+
+  .right-desc{
+    padding-top: 4%;
+    padding-bottom: 6%;
+  }
+  img.left-pict{
+    padding-bottom: 1.5%;
+  }
+
+  h1.story{
+    padding-top: 4.5%;
+    padding-bottom: 2.5%;
+  }
+
+  .mb-story{
+    text-align: left;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 4%;
+  }
+  
+  .content-2{
+    padding-bottom: 5.5%;
+  }
+
+  .mb-left-desc{
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  h1.plan{
+    padding-bottom: 1.5%;
+  }
+ 
+  .col-6{
+    padding-top:1%;
+  }
+
+  .mb-right-desc{
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .story-desc{
+    max-width: 100%;
+    max-height: 9em;
+  }
+
+  .type-desc{
+    text-align: left;
+  }
+  .section-grey-bg{
+    padding-top: 5%;
+    padding-bottom: 25%;
+  }
+
+  .maps-pict{
+    margin-top: -80px;
+
+  }
+
+  .slides{
+    padding-top: 8%;
+  }
+  
+  h1.highlights{
+    padding-bottom: 2%;
+  }
+
+  .mb-location{
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 100%;
+    padding-bottom: 4%;
+
+  }
+  
+  .location-desc{
+    max-width: 100%;
+    max-height: 12em;
+  }
+
+  .mb-plan-desc{
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 8%;
+    /* max-height: 9em; */
+  }
+
+  .plan-desc{
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    max-height: 9em;
+  }
+  
+  a.read-more {
+    color: black;
+    text-decoration: underline;
+    margin-top:5%;
+    display: block;
+    /* padding-top: 10%; */
+  }
+
+  a.close{
+    display: block;
+    margin-bottom: 5%;
+    color: black;
+    font-size:16px;
+    float: left;
+    text-decoration: underline;
+    font-weight: 400; 
+    opacity: 1;
+    /* padding-bottom: 10%; */
+
+
+  }
+
+  .highlights-desc-1{
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 8%;
+   
+  }
+
+  .highlight-content{
+    max-height: 6em;
+
+  }
+
+  .mb-footer-desc{
+    font-size: 70%;
+    text-align: center;
+  }
+
+  .footer-title{
+    font-size: 100%;
+  }
+} 
+
+
+
